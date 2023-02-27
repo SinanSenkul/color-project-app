@@ -1,8 +1,57 @@
-.colorbox {
+.colorbox-main {
     width: 20%;
     height: 25%;
     margin: 0 auto;
     display: inline-block;
     position: relative;
     cursor: pointer;
+    margin-bottom: -0.25rem;
+}
+
+.copy-button {
+    width: 3rem;
+    text-align: center;
+    height: 1.5rem;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.5rem;
+    margin-top: -0.5rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 1rem;
+    line-height: 1rem;
+    color: white;
+    border: none;
+    opacity: 0;
+}
+
+.colorbox-main:hover .copy-button {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.colorbox{
+    position: absolute;
+    padding: 0.3rem;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    color:black;
+    letter-spacing: 0.1rem;
+    font-size: 0.75rem;
+}
+
+.more-span{
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    border: none;
+    right: 0px;
+    bottom: 0px;
+    color: white;
+    width: 4rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
 }
