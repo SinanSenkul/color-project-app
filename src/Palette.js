@@ -3,6 +3,8 @@ import { Route, Routes, useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import Colorbox from "./Colorbox";
 import './Palette.css';
+import { generatePalette } from "./colorHelpers";
+import seedPalettes from "./seedPalettes";
 
 class Palette extends Component {
     constructor(props) {
@@ -13,6 +15,7 @@ class Palette extends Component {
     }
 
     render() {
+        console.log(generatePalette(seedPalettes[1]));
         return (
             <div className="palette-main">
                 {/* navbar here */}
