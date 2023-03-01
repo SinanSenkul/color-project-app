@@ -9,19 +9,19 @@
 }
 
 .copy-button {
-    width: 4rem;
+    width: auto;
     text-align: center;
     height: 2rem;
     position: absolute;
     display: inline-block;
     top: 50%;
     left: 50%;
-    margin-left: -1.5rem;
-    margin-top: -0.5rem;
+    margin-left: -3.5rem;
+    margin-top: -1rem;
     outline: none;
     background: rgba(255, 255, 255, 0.3);
     font-size: 1rem;
-    line-height: 1rem;
+/*     line-height: 1rem; */
     color: white;
     border: none;
     opacity: 0;
@@ -30,6 +30,7 @@
 .colorbox-main:hover .copy-button {
     opacity: 1;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .colorbox {
