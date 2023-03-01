@@ -1,3 +1,3 @@
 - final project from colt steele's "the modern react bootcamp"
-- an app user can create color palettes
+- in the app user can create color palettes
 - palette has colors user defines and creates the shades of these colors, has three formats (rgb, rgba and hex)
