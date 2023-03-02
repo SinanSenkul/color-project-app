@@ -38,9 +38,14 @@
 }
 
 .rc-slider-handle {
-    background-color: rgb(89, 0, 255) !important;
+    background-color: teal !important;
 }
 
 /* .rc-slider-rail {
     height: 0.8rem !important;
 } */
+
+.select-container{
+    margin-left: auto;
+    margin-right: 1rem;
+}

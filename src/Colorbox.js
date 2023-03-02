@@ -29,7 +29,7 @@ class Colorbox extends Component {
                     </div>
                     <div className="copy-container">
                         <div className="colorbox">
-                            <span>{name}</span>
+                            <span>{name.toLowerCase()}</span>
                         </div>
                         <button className="copy-button">click on to copy</button>
                     </div>
