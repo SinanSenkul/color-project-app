@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { withStyles } from '@material-ui/styles';
 
@@ -13,11 +13,16 @@ const styles = {
         "&:hover": {
             cursor: "pointer"
         },
-        border: "1px solid black"
+        border: "1px solid black",
+        display: "flex",
+        flexDirection: "column"
     },
     colorsContainer: {
-        backgroundColor: "gray",
-
+        backgroundColor: "white",
+        height: "150px",
+        width: "100%",
+        overflow: "hidden",
+        borderRadius: "0.3rem"
     },
     title: {
         display: "flex",
@@ -31,18 +36,37 @@ const styles = {
     },
     emoji: {
         marginLeft: "0.5rem",
-        fontSize: "1.5rem"
+    },
+    babyColor: {
+        width: "20%",
+        height: "2.2rem",
+        display: "inline-block",
+        margin: "0 auto",
+        position: "relative",
+        marginBottom: "-0.5rem"
     }
 }
 
+
+
 function MiniPalette(props) {
-    const { classes, paletteName, emoji } = props;
+    const { classes, paletteName, emoji, colors, id } = props;
+    const babyColors = colors.map(color => (
+        <div className={classes.babyColor} style={{ backgroundColor: color.color }} key={color.name}></div>
+    ))
+
+    const history = useNavigate();
+    function handleClick(e) {
+        e.preventDefault();
+        history(`/palette/${id}`);
+    }
+
     return (
-        <div className={classes.main}>
+        <div className={classes.main} onClick={handleClick}>
             <div className={classes.colorsContainer}>
-                {/* baby color divs here */}
+                {babyColors}
             </div>
-            <h5 className={classes.title}>{paletteName?.toLowerCase()}<span className={classes.emoji}>{emoji}</span></h5>
+            <p className={classes.title}><b>{paletteName?.toLowerCase()}<span className={classes.emoji}>{emoji}</span></b></p>
         </div >
     );
 }

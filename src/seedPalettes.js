@@ -80,7 +80,7 @@ export default [
     ]
   },
   {
-    paletteName: "Flat UI Colors American",
+    paletteName: "Flat UI Colors usa",
     id: "flat-ui-colors-american",
     emoji: "🗽",
     colors: [

@@ -7,10 +7,10 @@ import { withStyles } from '@material-ui/styles';
 const styles = {
     main: {
         backgroundColor: "blue",
-        height: "100%",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center",
+        height:"100%"
     },
     container: {
         width: "50%",
