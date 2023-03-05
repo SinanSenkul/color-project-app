@@ -25,15 +25,22 @@ function Palette(props) {
     function changeFormat(val) {
         setFormat(format = val);
     }
-    
+
     let paletteName = palette.paletteName;
     let emoji = palette.emoji;
     return (
         <div className="palette-main">
-            <Navbar level={level} updateLevel={updateLevel} changeFormat={changeFormat} />
+            <Navbar shadeNavbar={false} level={level} updateLevel={updateLevel} changeFormat={changeFormat} />
             <div className="colorbox-container">
                 {palette.colors[level].map(color =>
-                    <Colorbox background={color[format]} name={color.name} key={color.id} />
+                    <Colorbox
+                        background={color[format]}
+                        name={color.name}
+                        key={color.name}
+                        colorId={color.id}
+                        paletteId={id}
+                        showLink={true}
+                    />
                 )}
             </div>
             <footer className="footer">
@@ -45,20 +52,3 @@ function Palette(props) {
 }
 
 export default Palette;
-
-/*  this.state = {
-     level: 600,
-     format: "hex"
- } */
-/* this.updateLevel = this.updateLevel.bind(this);
-this.changeFormat = this.changeFormat.bind(this); */
-
-/* this.setState({
-level: newLevel
-}) */
-/* this.setState({
-format: val
-}) */
-
-/* let level = this.state.level; */
-/* let format = this.state.format; */

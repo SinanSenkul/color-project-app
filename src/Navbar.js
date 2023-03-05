@@ -38,25 +38,31 @@ class Navbar extends Component {
         let format = this.state.format;
         let updateLevel = this.props.updateLevel;
         let open = this.state.open;
+        let shadeNavbar = this.props.shadeNavbar;
         return (
             <nav className="navbar-main">
                 <div className="logo-container">
                     <Link className="logo" to="/">color-app</Link>
                 </div>
-                <div className="text-container">
-                    <span className="span">
-                        level{level}
-                    </span>
-                </div>
-                <div className="slider-container">
-                    <Slider
-                        defaultValue={level}
-                        min={100}
-                        max={900}
-                        step={100}
-                        onChange={updateLevel}
-                    />
-                </div>
+                {!shadeNavbar ?
+                    <div className="palette-navbar">
+                        <div className="text-container">
+                            <span className="span">
+                                level{level}
+                            </span>
+                        </div>
+                        <div className="slider-container">
+                            <Slider
+                                defaultValue={level}
+                                min={100}
+                                max={900}
+                                step={100}
+                                onChange={updateLevel}
+                            />
+                        </div>
+                    </div>
+                    : null
+                }
                 <div className="select-container">
                     <Select value={format} onChange={this.handleFormatChange}>
                         <MenuItem value="hex">hex</MenuItem>
