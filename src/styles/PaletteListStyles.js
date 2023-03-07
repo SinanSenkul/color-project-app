@@ -16,8 +16,12 @@ const styles = {
     nav: {
         display: "flex",
         width: "100%",
+        color: "white",
+        alignItems: "center",
         justifyContent: "space-between",
-        color: "white"
+        "& a":{
+            color: "white"
+        }
     },
     minipalettesContainer: {
         boxSizing: "border-box",

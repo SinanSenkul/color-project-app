@@ -14,7 +14,7 @@ const styles = {
     },
     colorsContainer: {
         backgroundColor: "white",
-        height: "150px",
+        height: "140px",
         width: "100%",
         overflow: "hidden",
         borderRadius: "0.3rem"
@@ -34,11 +34,11 @@ const styles = {
     },
     babyColor: {
         width: "20%",
-        height: "2.2rem",
+        height: "2.1rem",
         display: "inline-block",
-        margin: "0 auto",
+        /* margin: "0 auto", */
         position: "relative",
-        marginBottom: "-0.5rem"
+        marginBottom:"-0.5rem"
     }
 }
 
