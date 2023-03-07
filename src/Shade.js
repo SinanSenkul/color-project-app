@@ -14,7 +14,7 @@ const styles = {
         flexDirection: "column",
     },
     colorboxContainer: {
-        height: "85%",
+        height: "90%",
         display: "flex",
         flexWrap: "wrap",
     },
@@ -36,17 +36,14 @@ const styles = {
         display: "flex",
         position: "relative",
         cursor: "pointer",
-        marginBottom: "16.5rem",
-        backgroundColor: "black",
-        color: "white",
+        marginBottom: "50%",
+        backgroundColor: "white",
         textAlign: "center",
         alignItems: "center",
         justifyContent: "center"
     },
-    link:{
-        color: "white",
-        textDecoration: "none",
-        fontWeight: "bolder"
+    link: {
+        fontWeight: "bolder",
     }
 }
 
@@ -76,6 +73,7 @@ function Shade(props) {
     }
 
     const shades = gatherShades(palette, colorId);
+    console.log('shades[0]' + shades[0]['hex']);
     const colorBoxes = shades.map(color =>
         <Colorbox colorId={colorId} paletteId={paletteId} name={color.name} background={color[format]} showLink={false} />
     )
@@ -85,7 +83,7 @@ function Shade(props) {
             <div className={classes.colorboxContainer}>
                 {colorBoxes}
                 <div className={classes.goBack}>
-                    <Link className={classes.link} to={`/palette/${paletteId}`}>back to palette</Link>
+                    <Link style={{ color: shades[7]['hex'] }} className={classes.link} to={`/palette/${paletteId}`}>back to palette</Link>
                 </div>
             </div>
             <footer className={classes.footer}>

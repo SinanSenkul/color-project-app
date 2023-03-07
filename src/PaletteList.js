@@ -42,7 +42,7 @@ function PaletteList(props) {
         <div className={classes.main}>
             <div className={classes.container}>
                 <nav className={classes.nav}>
-                    <h1>react colors</h1>
+                    <h3>choose a palette:</h3>
                 </nav>
                 <div className={classes.minipalettesContainer}>
                     {paletteList.map(palette =>

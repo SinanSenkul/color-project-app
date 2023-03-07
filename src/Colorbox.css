@@ -21,15 +21,14 @@
     outline: none;
     background: rgba(255, 255, 255, 0.3);
     font-size: 1rem;
-/*     line-height: 1rem; */
     color: white;
     border: none;
     opacity: 0;
 }
 
 .colorbox-main:hover .copy-button {
-    opacity: 1;
-    transition: 0.5s;
+    opacity: 0.5;
+    transition: 1s;
     cursor: pointer;
 }
 
