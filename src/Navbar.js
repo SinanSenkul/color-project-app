@@ -3,7 +3,7 @@ import { Route, Routes, useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import 'rc-slider/assets/index.css';
 import Slider from "rc-slider";
-import './Navbar.css';
+import './styles/Navbar.css';
 import { Select } from "@mui/material";
 import MenuItem from '@mui/material/MenuItem';
 import Snackbar from '@mui/material/Snackbar';
