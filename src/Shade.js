@@ -34,7 +34,6 @@ function Shade(props) {
     }
 
     const shades = gatherShades(palette, colorId);
-    console.log('shades[0]' + shades[0]['hex']);
     const colorBoxes = shades.map(color =>
         <Colorbox colorId={colorId} paletteId={paletteId} name={color.name} background={color[format]} showLink={false} />
     )

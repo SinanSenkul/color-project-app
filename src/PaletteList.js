@@ -5,9 +5,7 @@ import { withStyles } from '@material-ui/styles';
 import { styles } from "./styles/PaletteListStyles";
 
 function PaletteList(props) {
-    const paletteList = props.seedPalettes;
-    const { classes } = props;
-
+    const { classes, palettes } = props;
     return (
         <div className={classes.main}>
             <div className={classes.container}>
@@ -16,7 +14,7 @@ function PaletteList(props) {
                     <Link to="/palette/new"><h4>create new palette</h4></Link>
                 </nav>
                 <div className={classes.minipalettesContainer}>
-                    {paletteList.map(palette =>
+                    {palettes.map(palette =>
                         <MiniPalette {...palette} />
                     )}
                 </div>

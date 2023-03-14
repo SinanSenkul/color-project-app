@@ -6,16 +6,16 @@ import 'rc-slider/assets/index.css';
 import './styles/Palette.css';
 import Slider from "rc-slider";
 import Navbar from "./Navbar";
-import seedPalettes from "./seedPalettes";
 import { generatePalette } from "./colorHelpers";
 
 function Palette(props) {
+    var { palettes } = props;
     const { id } = useParams();
     var [level, setLevel] = useState(600);
     var [format, setFormat] = useState('hex');
 
     function findPalette(id) {
-        return seedPalettes.find(palette => palette.id === id);
+        return palettes.find(palette => palette.id === id);
     }
     const palette = generatePalette(findPalette(id));
 
