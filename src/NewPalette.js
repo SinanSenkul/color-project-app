@@ -15,8 +15,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { Button } from "@mui/material";
 import { ChromePicker } from "react-color";
 import { textColor } from "./textColor";
-import DColorbox from "./DColorbox";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import DraggableColorList from "./DraggableColorList";
 
 const styles = {
     toolbar: {
@@ -153,11 +153,23 @@ function NewPalette(props) {
     function handlePNChange(e) {
         setNPName(paletteName = e.target.value);
     }
-    
+
     function deleteDColorbox(name) {
         setColors(colors = colors.filter(color => color.name !== name));
     }
 
+    function clearColors() {
+        setColors([]);
+    }
+
+    function pickRandomColor() {
+        let r = Math.round(Math.random() * 255);
+        let g = Math.round(Math.random() * 255);
+        let b = Math.round(Math.random() * 255);
+        let a = 1;
+        let color = `rgba(${r}, ${g}, ${b}, ${a})`;
+        setColor(color);
+    }
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -173,7 +185,7 @@ function NewPalette(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Persistent drawer
+                        give your palette a name:
                     </Typography>
                     <ValidatorForm onSubmit={handleSubmit} className={classes.paletteNameForm}>
                         <TextValidator
@@ -211,8 +223,8 @@ function NewPalette(props) {
                 <Divider />
                 <Typography variant="h4">create a new palette</Typography>
                 <div className={classes.drawerButtonContainer}>
-                    <Button variant="contained" color="secondary">clear palette</Button>
-                    <Button variant="contained" color="primary">random color</Button>
+                    <Button variant="contained" color="secondary" onClick={clearColors}>clear colors</Button>
+                    <Button variant="contained" color="primary" onClick={pickRandomColor}>random color</Button>
                 </div>
                 <ChromePicker color={colorPicked} onChange={handleColorChange} />
                 <ValidatorForm
@@ -230,14 +242,19 @@ function NewPalette(props) {
                         variant="contained"
                         color="primary"
                         type="submit"
+                        disabled={colors.length >= 5}
                     >
-                        add color
+                        {colors.length >= 5 ? 'palette full' : 'add color'}
                     </Button>
                 </ValidatorForm>
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />
-                {colors.map(color => <DColorbox key={color.name} color={color.color} name={color.name} deleteDColorbox={deleteDColorbox} />)}
+                <DraggableColorList
+                    colors={colors}
+                    deleteDColorbox={deleteDColorbox}
+                    axis='xy'
+                />
             </Main>
         </Box>
     );

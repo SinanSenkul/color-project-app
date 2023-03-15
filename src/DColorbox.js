@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import { withStyles } from '@material-ui/styles';
 import { textColor } from "./textColor";
+import { SortableElement } from "react-sortable-hoc";
 
 const styles = {
     main: {
@@ -24,6 +25,11 @@ const styles = {
         display: "flex",
         justifyContent: "space-between"
     },
+    deleteIcon: {
+        '& :hover': {
+            color: 'white',
+        }
+    }
 }
 
 function DColorbox(props) {
@@ -37,7 +43,9 @@ function DColorbox(props) {
                 <span>
                     {name}
                 </span>
-                <i class="material-icons" onClick={handleDelete}>delete</i>
+                <div className={classes.deleteIcon}>
+                    <i class="material-icons" onClick={handleDelete}>delete</i>
+                </div>
             </div>
         </div>
     );
