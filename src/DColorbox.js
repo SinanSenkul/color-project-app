@@ -44,7 +44,7 @@ function DColorbox(props) {
                     {name}
                 </span>
                 <div className={classes.deleteIcon}>
-                    <i class="material-icons" onClick={handleDelete}>delete</i>
+                    <i className="material-icons" onClick={handleDelete}>delete</i>
                 </div>
             </div>
         </div>

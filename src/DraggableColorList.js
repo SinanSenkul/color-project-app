@@ -1,12 +1,11 @@
 import React, { Component, useState } from "react";
-import { SortableContainer } from "react-sortable-hoc";
 import DColorbox from "./DColorbox";
 
-const DraggableColorList = ({ colors, deleteDColorbox }) => {
-
+function DraggableColorList(props) {
+    const { colors, deleteDColorbox } = props;
     return (
         <div style={{ height: '100%' }}>
-            {colors.map((color, i) =>
+            {colors.map((color) =>
                 <DColorbox
                     key={color.name}
                     color={color.color}
