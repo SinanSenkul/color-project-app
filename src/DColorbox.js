@@ -1,7 +1,6 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { withStyles } from '@material-ui/styles';
 import { textColor } from "./textColor";
-import { SortableElement } from "react-sortable-hoc";
 
 const styles = {
     main: {
@@ -37,13 +36,14 @@ function DColorbox(props) {
     function handleDelete() {
         deleteDColorbox(name);
     }
+    var tColor = textColor(color);
     return (
         <div style={{ backgroundColor: color }} className={classes.main}>
             <div className={classes.boxContent}>
-                <span>
+                <span style={{color: tColor}}>
                     {name}
                 </span>
-                <div className={classes.deleteIcon}>
+                <div style={{color: tColor}}>
                     <i className="material-icons" onClick={handleDelete}>delete</i>
                 </div>
             </div>

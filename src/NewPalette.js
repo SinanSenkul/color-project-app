@@ -17,6 +17,21 @@ import ColorPicker from "./ColorPicker";
 const styles = {
     main: {
         display: "flex"
+    },
+    drawerButtonContainer: {
+        width: "18rem"
+    },
+    drawerContainer: {
+        width: "90%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%",
+    },
+    drawerButton: {
+        width: "50%",
+        fontSize: "0.75rem !important"
     }
 }
 
@@ -124,7 +139,6 @@ function NewPalette(props) {
     return (
         <Box sx={{ display: 'flex' }}>
             <NewPaletteNav
-                classes={classes}
                 open={open}
                 handleSubmit={handleSubmit}
                 paletteName={paletteName}
@@ -140,6 +154,8 @@ function NewPalette(props) {
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
+                        display: "flex",
+                        alignItems: "center"
                     },
                 }}
                 variant="persistent"
@@ -152,20 +168,26 @@ function NewPalette(props) {
                     </IconButton>
                 </DrawerHeader>
                 <Divider />
-                <Typography variant="h4">create a new palette</Typography>
-                <div className={classes.drawerButtonContainer}>
-                    <Button variant="contained" color="secondary" onClick={clearColors}>clear colors</Button>
-                    <Button variant="contained" color="primary" onClick={pickRandomColor}>random color</Button>
+                <div className={classes.drawerContainer}>
+                    <Typography variant="h4" gutterBottom>add new colors</Typography>
+                    <div className={classes.drawerButtonContainer}>
+                        <Button variant="contained" className={classes.drawerButton} color="secondary" onClick={clearColors}>
+                            clear colors
+                        </Button>
+                        <Button variant="contained" className={classes.drawerButton} color="primary" onClick={pickRandomColor}>
+                            random color
+                        </Button>
+                    </div>
+                    <ColorPicker
+                        colorPicked={colorPicked}
+                        handleColorChange={handleColorChange}
+                        addColor={addColor}
+                        colorName={colorName}
+                        handleNameChange={handleNameChange}
+                        textClr={textClr}
+                        colors={colors}
+                    />
                 </div>
-                <ColorPicker
-                    colorPicked={colorPicked}
-                    handleColorChange={handleColorChange}
-                    addColor={addColor}
-                    colorName={colorName}
-                    handleNameChange={handleNameChange}
-                    textClr={textClr}
-                    colors={colors}
-                />
             </Drawer>
             <Main open={open}>
                 <DrawerHeader />

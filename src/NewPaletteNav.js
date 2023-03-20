@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { withStyles } from '@material-ui/styles';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
@@ -11,40 +9,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Button } from "@mui/material";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { Link } from "react-router-dom";
-
-const styles = {
-    toolbar: {
-        display: "flex",
-        flexDirection: "row",
-    },
-    paletteNameForm: {
-        display: "flex",
-        flexDirection: "row",
-        marginLeft: "1rem",
-    },
-    paletteNameTextbox: {
-        marginRight: "1rem"
-    }
-}
-
-const drawerWidth = 400;
-
-const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
-    transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-    }),
-    ...(open && {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: `${drawerWidth}px`,
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    }),
-}));
+import { styles, drawerWidth, AppBar } from './styles/NewPaletteNavStyles';
+import PaletteSaveDialog from "./PaletteSaveDialog";
 
 function NewPaletteNav(props) {
     const { classes, open, handleSubmit, paletteName, handlePNChange,
@@ -58,10 +24,10 @@ function NewPaletteNav(props) {
         );
     })
     return (
-        <div>
+        <div className={classes.main}>
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
-                <AppBar color="default" position="fixed" open={open}>
+                <AppBar sx={{ alignItems: 'center' }} color="default" position="fixed" open={open}>
                     <Toolbar className={classes.toolbar}>
                         <IconButton
                             color="inherit"
@@ -75,23 +41,18 @@ function NewPaletteNav(props) {
                         <Typography variant="h6" noWrap component="div">
                             create a palette
                         </Typography>
-                        <ValidatorForm onSubmit={handleSubmit} className={classes.paletteNameForm}>
-                            <TextValidator
-                                value={paletteName}
-                                name='paletteName'
-                                onChange={handlePNChange}
-                                validators={['required', 'isPaletteNameUnique',]}
-                                errorMessages={['palette name can not be empty', 'palette name already in use']}
-                                className={classes.paletteNameTextbox}
-                            >
-                                enter palette name
-                            </TextValidator>
-                            <Button variant="contained" color="primary" type="submit">save palette</Button>
-                            <Link to="/">
-                                <Button variant="contained" color="secondary">go back</Button>
-                            </Link>
-                        </ValidatorForm>
                     </Toolbar>
+                    <div className={classes.navButtonsContainer}>
+                            <PaletteSaveDialog
+                                paletteName={paletteName}
+                                handlePNChange={handlePNChange}
+                                palettes={palettes}
+                                handleSubmit={handleSubmit}
+                            />
+                        <Link to="/" className={classes.goBackLink}>
+                            <Button className={classes.navButton} variant="contained" color="secondary">go back</Button>
+                        </Link>
+                    </div>
                 </AppBar>
             </Box>
         </div>
