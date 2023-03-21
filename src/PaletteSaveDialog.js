@@ -7,17 +7,7 @@ import React, { useEffect } from "react";
 import { withStyles } from '@material-ui/styles';
 import { Button } from "@mui/material";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
-
-const styles = {
-    main: {
-
-    },
-    saveButton:{
-        fontSize: "0.75rem !important",
-        width: "8rem",
-        height: "2rem",
-    }
-}
+import { styles } from './styles/PaletteSaveDialogStyles';
 
 function PaletteSaveDialog(props) {
     const { classes, paletteName, handlePNChange, palettes, handleSubmit } = props;
@@ -49,7 +39,7 @@ function PaletteSaveDialog(props) {
                 <ValidatorForm onSubmit={handleSubmit}>
                     <DialogContent>
                         <DialogContentText>
-                            enter a unique palette name:
+                            your palette name:
                         </DialogContentText>
                         <TextValidator
                             value={paletteName}
@@ -63,7 +53,7 @@ function PaletteSaveDialog(props) {
                     </DialogContent>
                     <DialogActions>
                         <Button onClick={handleClose}>cancel</Button>
-                        <Button type="submit">save</Button>
+                        <Button type="submit">save palette</Button>
                     </DialogActions>
                 </ValidatorForm>
             </Dialog>

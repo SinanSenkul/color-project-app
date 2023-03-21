@@ -1,6 +1,5 @@
-import React, { Component, useState } from "react";
-import { useParams, useNavigate } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import React from "react";
+import { useNavigate } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import { styles } from "./styles/MiniPaletteStyles";
 

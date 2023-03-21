@@ -91,7 +91,6 @@ class Navbar extends Component {
             </nav>
         );
     }
-
 }
 
 export default Navbar;

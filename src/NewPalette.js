@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
-import { styled, useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
@@ -13,58 +13,7 @@ import { textColor } from "./textColor";
 import DraggableColorList from "./DraggableColorList";
 import NewPaletteNav from "./NewPaletteNav";
 import ColorPicker from "./ColorPicker";
-
-const styles = {
-    main: {
-        display: "flex"
-    },
-    drawerButtonContainer: {
-        width: "18rem"
-    },
-    drawerContainer: {
-        width: "90%",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
-    },
-    drawerButton: {
-        width: "50%",
-        fontSize: "0.75rem !important"
-    }
-}
-
-const drawerWidth = 400;
-
-const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-    ({ theme, open }) => ({
-        height: `100vh`,
-        flexGrow: 1,
-        padding: theme.spacing(3),
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        marginLeft: `-${drawerWidth}px`,
-        ...(open && {
-            transition: theme.transitions.create('margin', {
-                easing: theme.transitions.easing.easeOut,
-                duration: theme.transitions.duration.enteringScreen,
-            }),
-            marginLeft: 0,
-        }),
-    }),
-);
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-}));
+import { styles, drawerWidth, Main, DrawerHeader } from './styles/NewPaletteStyles';
 
 function NewPalette(props) {
     const { classes, savePalette, palettes } = props;
@@ -75,6 +24,7 @@ function NewPalette(props) {
     var [colors, setColors] = React.useState([]);
     var [colorName, setName] = React.useState('');
     var [paletteName, setNPName] = React.useState('');
+    var [emoji, setEmoji] = React.useState('🎨');
     const history = useNavigate();
 
     const handleDrawerOpen = () => {
@@ -109,7 +59,7 @@ function NewPalette(props) {
         const newPalette = {
             paletteName: newPaletteName,
             id: newId,
-            emoji: "🎨",
+            emoji: emoji,
             colors: colors
         }
         savePalette(newPalette);
