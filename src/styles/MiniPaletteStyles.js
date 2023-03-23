@@ -5,9 +5,6 @@ const styles = {
         padding: "0.5rem",
         position: "relative",
         overflow: "hidden",
-        "&:hover": {
-            cursor: "pointer"
-        },
         border: "1px solid black",
         display: "flex",
         flexDirection: "column"
@@ -20,15 +17,14 @@ const styles = {
         height: "140px",
         width: "100%",
         overflow: "hidden",
-        borderRadius: "0.3rem"
+        borderRadius: "0.3rem",
     },
     title: {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        margin: "0",
+        margin: "0rem",
         color: "black",
-        paddingTop: "0.5rem",
         fontSize: "1rem",
         position: "relative",
     },
@@ -44,9 +40,20 @@ const styles = {
         marginBottom: "-0.25rem"
     },
     deleteIcon: {
-        marginRight: '0rem',
-        opacity: '1'
-    }
+        margin: "0rem",
+        fontSize: "1rem",
+        position: "relative",
+        marginBottom: "-0.6rem",
+        "&:hover": {
+            cursor: "pointer"
+        }
+    },
+    bottomInfoContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
 }
 
 export { styles }

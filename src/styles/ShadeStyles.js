@@ -5,7 +5,7 @@ const styles = {
         flexDirection: "column",
     },
     colorboxContainer: {
-        height: "90%",
+        height: "85%",
         display: "flex",
         flexWrap: "wrap",
     },
@@ -21,13 +21,13 @@ const styles = {
         fontSize: "1.5rem"
     },
     goBack: {
-        width: "20%",
-        height: "25%",
-        margin: "0 auto",
-        display: "flex",
-        position: "relative",
-        cursor: "pointer",
-        marginBottom: "50%",
+        width: '20%',
+        height: '22.5%',
+        margin: '0 auto',
+        display: 'flex',
+        position: 'relative',
+        cursor: 'pointer',
+        marginBottom: "40%",
         backgroundColor: "white",
         textAlign: "center",
         alignItems: "center",
@@ -35,6 +35,18 @@ const styles = {
     },
     link: {
         fontWeight: "bolder",
+    },
+    '@media (max-width: 1000px)': {
+        goBack: {
+            height: '11.25%',
+            width: '50%'
+        },
+    },
+    '@media (max-width: 600px)': {
+        goBack: {
+            height: '6%',
+            width: '100%'
+        },
     }
 }
 

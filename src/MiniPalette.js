@@ -10,26 +10,28 @@ function MiniPalette(props) {
     ))
 
     const history = useNavigate();
-    
+
     function handleClick(e) {
         e.preventDefault();
         history(`/palette/${id}`);
     }
 
-    function handleRemove(e){
+    function handleRemove(e) {
         e.stopPropagation();
         removePalette(id);
     }
 
     return (
         <div className={classes.main}>
-            <div className={classes.deleteIcon}>
-                <i className="material-icons" onClick={handleRemove}>delete</i>
-            </div>
             <div className={classes.colorsContainer} onClick={handleClick}>
                 {babyColors}
             </div>
-            <p className={classes.title}><b>{paletteName?.toLowerCase()}<span className={classes.emoji}>{emoji}</span></b></p>
+            <div className={classes.bottomInfoContainer}>
+                <p className={classes.title}><b>{paletteName?.toLowerCase()}<span className={classes.emoji}>{emoji}</span></b></p>
+                <div className={classes.deleteIcon}>
+                    <i className="material-icons" onClick={handleRemove}>delete</i>
+                </div>
+            </div>
         </div >
     );
 }

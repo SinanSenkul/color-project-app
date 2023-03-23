@@ -42,7 +42,9 @@ function Shade(props) {
             <div className={classes.colorboxContainer}>
                 {colorBoxes}
                 <div className={classes.goBack}>
-                    <Link style={{ color: shades[7]['hex'] }} className={classes.link} to={`/palette/${paletteId}`}>back to palette</Link>
+                    <Link style={{ color: shades[7]['hex'] }} className={classes.link} to={`/palette/${paletteId}`}>
+                        back to palette
+                    </Link>
                 </div>
             </div>
             <footer className={classes.footer}>

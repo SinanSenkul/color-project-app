@@ -1,10 +1,11 @@
 const styles = {
     main: {
-        backgroundColor: "blue",
+        width:"100%",
+        height: "100vh",
+        backgroundColor: "olive",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center",
-        height: "100vh"
     },
     container: {
         width: "50%",
@@ -16,11 +17,11 @@ const styles = {
     nav: {
         display: "flex",
         width: "100%",
-        color: "white",
+        color: "black",
         alignItems: "center",
         justifyContent: "space-between",
-        "& a":{
-            color: "white"
+        "& a": {
+            color: "black"
         }
     },
     minipalettesContainer: {
@@ -29,6 +30,36 @@ const styles = {
         display: "grid",
         gridTemplateColumns: "repeat(3,30%)",
         gridGap: "5%"
+    },
+    '@media (max-width: 1000px)': {
+        minipalettesContainer: {
+            display: "flex",
+            flexDirection: "column",
+            width:"60%"
+        },
+        main:{
+            height: "auto"
+        }
+    },
+    '@media (max-width: 800px)': {
+        minipalettesContainer: {
+            display: "flex",
+            flexDirection: "column",
+            width:"70%"
+        },
+        main:{
+            height: "auto"
+        }
+    },
+    '@media (max-width: 600px)': {
+        minipalettesContainer: {
+            display: "flex",
+            flexDirection: "column",
+            width:"80%"
+        },
+        main:{
+            height: "auto"
+        }
     }
 }
 

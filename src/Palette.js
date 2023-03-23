@@ -1,10 +1,8 @@
-import React, { Component, useState } from "react";
-import { Route, Routes, useParams } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useParams } from 'react-router-dom';
 import Colorbox from "./Colorbox";
 import 'rc-slider/assets/index.css';
 import './styles/Palette.css';
-import Slider from "rc-slider";
 import Navbar from "./Navbar";
 import { generatePalette } from "./colorHelpers";
 

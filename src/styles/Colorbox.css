@@ -106,7 +106,20 @@
     margin-bottom: 0.5rem;
 }
 
-.copy-message p{
+.copy-message p {
     font-size: 2rem;
     font-weight: 100;
+}
+
+@media screen and (max-width: 1000px) {
+    .colorbox-main {
+        height: 11.25%;
+        width: 50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .colorbox-main {
+        height: 6%;
+        width: 100%;
+    }
 }

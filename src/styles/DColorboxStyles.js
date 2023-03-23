@@ -6,7 +6,7 @@ const styles = {
         display: "inline-block",
         position: "relative",
         cursor: "pointer",
-        marginBottom: "-0.25rem",
+        marginBottom: "-0.35rem",
     },
     boxContent: {
         position: "absolute",
@@ -23,6 +23,16 @@ const styles = {
     deleteIcon: {
         '& :hover': {
             color: 'white',
+        }
+    },
+    '@media (max-width: 1000px)': {
+        main: {
+            width: "50%"
+        }
+    },
+    '@media (max-width: 500px)': {
+        main: {
+            width: "100%"
         }
     }
 }
