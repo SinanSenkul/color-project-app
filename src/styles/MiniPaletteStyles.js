@@ -13,6 +13,9 @@ const styles = {
         flexDirection: "column"
     },
     colorsContainer: {
+        "&:hover": {
+            cursor: "pointer"
+        },
         backgroundColor: "white",
         height: "140px",
         width: "100%",
@@ -38,7 +41,11 @@ const styles = {
         display: "inline-block",
         /* margin: "0 auto", */
         position: "relative",
-        marginBottom:"-0.5rem"
+        marginBottom: "-0.25rem"
+    },
+    deleteIcon: {
+        marginRight: '0rem',
+        opacity: '1'
     }
 }
 

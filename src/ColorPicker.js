@@ -64,10 +64,10 @@ function ColorPicker(props) {
                     variant="contained"
                     color="primary"
                     type="submit"
-                    disabled={colors.length >= 5}
+                    disabled={colors.length >= 20}
                     className={classes.addColorButton}
                 >
-                    {colors.length >= 5 ? 'palette full' : 'add color'}
+                    {colors.length >= 20 ? 'palette full' : 'add color'}
                 </Button>
             </ValidatorForm>
         </div>

@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/styles';
 import { styles } from "./styles/PaletteListStyles";
 
 function PaletteList(props) {
-    const { classes, palettes } = props;
+    const { classes, palettes, removePalette } = props;
     return (
         <div className={classes.main}>
             <div className={classes.container}>
@@ -15,7 +15,13 @@ function PaletteList(props) {
                 </nav>
                 <div className={classes.minipalettesContainer}>
                     {palettes.map(palette =>
-                        <MiniPalette {...palette} />
+                        <MiniPalette
+                            paletteName={palette.paletteName}
+                            emoji={palette.emoji}
+                            colors={palette.colors}
+                            id={palette.id}
+                            removePalette={removePalette}
+                        />
                     )}
                 </div>
             </div>

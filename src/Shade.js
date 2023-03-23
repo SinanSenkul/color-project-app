@@ -5,16 +5,15 @@ import seedPalettes from "./seedPalettes";
 import { generatePalette } from "./colorHelpers";
 import Colorbox from "./Colorbox";
 import Navbar from "./Navbar";
-import { textAlign } from "@mui/system";
 import { styles } from './styles/ShadeStyles';
 
 function Shade(props) {
     const { paletteId, colorId } = useParams();
-    const { classes } = props;
+    const { classes, palettes } = props;
     var [level, setLevel] = useState(600);
     var [format, setFormat] = useState('hex');
 
-    const palette = generatePalette(seedPalettes.find(palette => palette.id === paletteId));
+    const palette = generatePalette(palettes.find(palette => palette.id === paletteId));
 
     function gatherShades(palette, colorToFilterBy) {
         let shades = [];
