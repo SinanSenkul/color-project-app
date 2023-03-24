@@ -45,7 +45,8 @@ const styles = {
         position: "relative",
         marginBottom: "-0.6rem",
         "&:hover": {
-            cursor: "pointer"
+            cursor: "pointer",
+            color: "#D2042D",
         }
     },
     bottomInfoContainer: {

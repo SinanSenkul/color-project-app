@@ -10,7 +10,7 @@ function PaletteList(props) {
         <div className={classes.main}>
             <div className={classes.container}>
                 <nav className={classes.nav}>
-                    <h4>choose a palette:</h4>
+                    <h4>current palettes:</h4>
                     <Link to="/palette/new"><h4>create new palette</h4></Link>
                 </nav>
                 <div className={classes.minipalettesContainer}>
