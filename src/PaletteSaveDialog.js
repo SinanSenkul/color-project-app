@@ -35,8 +35,7 @@ function PaletteSaveDialog(props) {
                 save palette
             </Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>add palette</DialogTitle>
-                <ValidatorForm onSubmit={handleSubmit}>
+                <ValidatorForm onSubmit={handleSubmit} className={classes.form}>
                     <DialogContent>
                         <DialogContentText>
                             your palette name:
@@ -52,8 +51,8 @@ function PaletteSaveDialog(props) {
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose}>cancel</Button>
-                        <Button type="submit">save palette</Button>
+                        <Button type="submit" color="primary">save palette</Button>
+                        <Button onClick={handleClose} color="secondary">cancel</Button>
                     </DialogActions>
                 </ValidatorForm>
             </Dialog>

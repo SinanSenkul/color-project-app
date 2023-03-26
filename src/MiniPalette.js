@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import { styles } from "./styles/MiniPaletteStyles";
+import PaletteRemoveDialog from "./PaletteRemoveDialog";
 
 function MiniPalette(props) {
     const { classes, paletteName, emoji, colors, id, removePalette } = props;
@@ -29,7 +30,7 @@ function MiniPalette(props) {
             <div className={classes.bottomInfoContainer}>
                 <p className={classes.title}><b>{paletteName?.toLowerCase()}<span className={classes.emoji}>{emoji}</span></b></p>
                 <div className={classes.deleteIcon}>
-                    <i className="material-icons" onClick={handleRemove}>delete</i>
+                    <PaletteRemoveDialog handleRemove={handleRemove} />
                 </div>
             </div>
         </div >

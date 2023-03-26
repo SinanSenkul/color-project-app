@@ -7,7 +7,8 @@ const styles = {
         overflow: "hidden",
         border: "1px solid black",
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        height: "10rem"
     },
     colorsContainer: {
         "&:hover": {

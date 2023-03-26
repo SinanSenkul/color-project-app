@@ -53,7 +53,8 @@ const styles = {
     '@media (max-width: 990px)': {
         minipalettesContainer: {
             gridTemplateColumns: "repeat(2,40%)",
-            justifyContent: "center"
+            justifyContent: "center",
+            gridGap: "5%"
         }
     },
     '@media (max-width: 770px)': {
@@ -61,7 +62,8 @@ const styles = {
     '@media (max-width: 580px)': {
         minipalettesContainer: {
             gridTemplateColumns: "repeat(1,60%)",
-            justifyContent: "center"
+            justifyContent: "center",
+            gridGap: "1%"
         }
     }
 }
