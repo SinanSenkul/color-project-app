@@ -119,7 +119,7 @@ function NewPalette(props) {
                 </DrawerHeader>
                 <Divider />
                 <div className={classes.drawerContainer}>
-                    <Typography variant="h4" gutterBottom>add new colors</Typography>
+                    <Typography variant="h5" gutterBottom>add a new color</Typography>
                     <div className={classes.drawerButtonContainer}>
                         <Button variant="contained" className={classes.drawerButton} color="secondary" onClick={clearColors}>
                             clear colors

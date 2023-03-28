@@ -1,10 +1,12 @@
 import React, { Component, useState } from "react";
 import Palette from "./Palette";
 import seedPalettes from "./seedPalettes";
-import { Route, Routes } from 'react-router-dom';
+import { useLocation, Route, Routes } from 'react-router-dom';
 import PaletteList from "./PaletteList";
 import Shade from "./Shade";
 import NewPalette from "./NewPalette";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import './App.css';
 
 function App() {
   const storedPalettes = JSON.parse(window.localStorage.getItem("palettes"))
@@ -26,16 +28,34 @@ function App() {
     syncLocalStorage();
   }
 
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<PaletteList palettes={palettes} removePalette={removePalette} />}></Route>
-        <Route path="/palette/:id" element={<Palette palettes={palettes} />}></Route>
-        <Route path="/palette/:paletteId/:colorId" element={<Shade palettes={palettes} />}></Route>
-        <Route path="/palette/new" element={<NewPalette savePalette={savePalette} palettes={palettes} />}></Route>
-      </Routes>
-    </div >
-  );
+    <div>
+      <TransitionGroup>
+        <CSSTransition key={location.key} classNames="fade" timeout={500}>
+          <Routes>
+            <Route
+              path="/"
+              element={<div className="page"><PaletteList palettes={palettes} removePalette={removePalette} /></div>}>
+            </Route>
+            <Route
+              path="/palette/:id"
+              element={<div className="page"><Palette palettes={palettes} /></div>}>
+            </Route>
+            <Route
+              path="/palette/:paletteId/:colorId"
+              element={<div className="page"><Shade palettes={palettes} /></div>}>
+            </Route>
+            <Route
+              path="/palette/new"
+              element={<div className="page"><NewPalette savePalette={savePalette} palettes={palettes} /></div>}>
+            </Route>
+          </Routes>
+        </CSSTransition>
+      </TransitionGroup>
+    </div>
+  )
 }
 
 export default App;

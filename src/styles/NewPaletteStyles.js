@@ -17,7 +17,7 @@ const styles = {
     },
     drawerButton: {
         width: "50%",
-        fontSize: "0.75rem !important"
+        fontSize: "0.75rem !important",
     },
 }
 
