@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import { useTheme } from '@mui/material/styles';
@@ -79,12 +79,24 @@ function NewPalette(props) {
     }
 
     function pickRandomColor() {
-        let r = Math.round(Math.random() * 255);
-        let g = Math.round(Math.random() * 255);
-        let b = Math.round(Math.random() * 255);
-        let a = 1;
-        let color = `rgba(${r}, ${g}, ${b}, ${a})`;
-        setColor(color);
+        var colorChanged = false;
+        var isDuplicateColor = false;
+        while (colorChanged === false) {
+            let r = Math.round(Math.random() * 255);
+            let g = Math.round(Math.random() * 255);
+            let b = Math.round(Math.random() * 255);
+            let a = 1;
+            let color = `rgba(${r}, ${g}, ${b}, ${a})`;
+            for (let i = 0; i < colors.length; i++) {
+                if (color === colors[i]) {
+                    isDuplicateColor = true;
+                }
+            }
+            if (isDuplicateColor === false) {
+                setColor(color);
+                colorChanged = true;
+            }
+        }
     }
     return (
         <Box sx={{ display: 'flex' }}>

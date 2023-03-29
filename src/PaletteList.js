@@ -1,11 +1,13 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import MiniPalette from "./MiniPalette";
 import { withStyles } from '@material-ui/styles';
 import { styles } from "./styles/PaletteListStyles";
 
 function PaletteList(props) {
+    
     const { classes, palettes, removePalette } = props;
+
     return (
         <div className={classes.main}>
             <div className={classes.container}>

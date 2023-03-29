@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { withStyles } from '@material-ui/styles';
-import seedPalettes from "./seedPalettes";
 import { generatePalette } from "./colorHelpers";
 import Colorbox from "./Colorbox";
 import Navbar from "./Navbar";

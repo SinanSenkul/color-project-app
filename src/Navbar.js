@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route, Routes, useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import 'rc-slider/assets/index.css';
 import Slider from "rc-slider";

@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useCallback } from "react";
 import Palette from "./Palette";
 import seedPalettes from "./seedPalettes";
 import { useLocation, Route, Routes } from 'react-router-dom';
@@ -33,11 +33,11 @@ function App() {
   return (
     <div>
       <TransitionGroup>
-        <CSSTransition key={location.key} classNames="fade" timeout={500}>
+        <CSSTransition key={location.key} classNames="fade" timeout={1000}>
           <Routes>
             <Route
               path="/"
-              element={<div className="page"><PaletteList palettes={palettes} removePalette={removePalette} /></div>}>
+              element={<PaletteList palettes={palettes} removePalette={removePalette} />}>
             </Route>
             <Route
               path="/palette/:id"

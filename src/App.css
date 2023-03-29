@@ -30,27 +30,25 @@
 }
 
 .fade-enter {
-  opacity: 0;
+  opacity: 0.5;
 }
 
 .fade-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: opacity 1000ms ease-in-out;
 }
 
 .fade-exit {
-  opacity: 0;
+  opacity: 0.5;
 }
 
 .fade-exit-active {
   opacity: 1;
-  transition: opacity 500ms ease-out;
+  transition: opacity 1000ms ease-in-out;
 }
 
 .page {
   height: 100vh;
-  position: fixed;
-  width: 100%;
 }
 
 @keyframes App-logo-spin {

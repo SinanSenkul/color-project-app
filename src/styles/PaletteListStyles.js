@@ -10,7 +10,8 @@ const styles = {
         justifyContent: "center",
         /* background by svgbackgrounds.com */
         backgroundImage: `url(${background})`,
-        overflow: 'scroll'
+        overflow: 'scroll',
+        position: "fixed"
     },
     container: {
         width: "50%",
